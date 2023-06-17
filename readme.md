@@ -2,7 +2,6 @@
 
 This project contains a Vue3 tutorial that covers topics such as Vue-Router, VDom, Attribute Binding, Components, Vuex, Authentication, Fake API with Service Operations, and Socket.io usage. It also includes a sample application called BookLike.
 
-> This tutorial is inspired by Tayfun Erbilen's #Vue3 Bootcamp course.
 
 ## Getting Started
 
@@ -37,6 +36,6 @@ We welcome contributions of any kind (bug fixes, new features, documentation, et
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
+> This tutorial is inspired by Tayfun Erbilen's #Vue3 Bootcamp course.
 
 To watch Tayfun Erbilen's #Vue3 Bootcamp course, [click here](https://www.example.com/vue3-bootcamp).
