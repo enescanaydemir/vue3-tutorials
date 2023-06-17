@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <style>
+      .completed-item {
+        background-color: #19875440;
+      }
+      .uncompleted-item {
+        background-color: #dc35465b;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row">
+          <div class="col-8 p-2">
+            <h3 class="text-center">Todo List</h3>
+            <div class="d-flex justify-content-start mb-4">
+              <input type="text" class="form-control me-2" @keydown.enter="addTodo" />
+            </div>
+            <div v-if="todoList.length > 0">
+              <ul class="list-group">
+                <li
+                  v-for="todo in todoList"
+                  :key="todo.id"
+                  :class="{ 'completed-item' : todo.completed, 'uncompleted-item' : !todo.completed}"
+                  class="list-group-item d-flex justify-content-between align-items-center"
+                >
+                  <div>
+                    <input class="form-check-input" type="checkbox" v-model="todo.completed" :id="`completed_checkox_${todo.id}`" />
+                    <!-- attribute binding kullanıldı = id yi :id yaparak statik halden dinamik hale getirdik. Yani attribute u change etmek istiyoruz yani kendimiz dğeiştirmek/kontrol etmek istediğimiz için bu şekilde dinamik hale getirdik-->
+                    <!-- Burada v-model kullanmamızın sebebi checkbox geçerli mi dğeil mi ? çalıştı mı çalışmadı mı ? bunun sağlamasını ve kontrolünü yaptık. Yani v-model ile todo içerisindeki completed true/false değişti/değişmedi kontrolünü yaptık-->
+                    <label class="form-check-label ms-2" :for="`completed_checkox_${todo.id}`"> {{ todo.text }} </label>
+                  </div>
+                  <button class="btn btn-danger btn-sm" @click="removeItem(todo)">Sil</button>
+                </li>
+                <!-- v-for = todoList içerisindeki todoları al ve her bir döndüğünde todo içerisinde sakla ve ver. Yani todoList içerisinden
+              todoları tek tek aldık ve todo ya atadık. sonrasında aldığımız todoları tek tek yazdırması için String interpolation içerisine
+              bu todoyu yazdırdık. -->
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-success"> Tamamlanmış Todo Sayısı : {{ completedItemCount }}</small>
+                <small class="text-danger"> Tamamlanmamış Todo Sayısı : {{ unCompletedItemCount }}</small>
+              </div>
+            </div>
+            <div v-else class="alert alert-warning">Henüz eklenmiş bir todo bulunmamaktadır.</div>
+          </div>
+          <div class="col-4">
+            <pre> {{ todoList }}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
