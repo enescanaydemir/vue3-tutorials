@@ -39,4 +39,4 @@ We welcome contributions of any kind (bug fixes, new features, documentation, et
 
 This project is licensed under the MIT License. See the `LICENSE` file for more information.
 
-To watch Tayfun Erbilen's #Vue3 Bootcamp course, [click here](https://www.example.com/vue3-bootcamp).
+To watch Tayfun Erbilen's #Vue3 Bootcamp course, [click here](https://www.youtube.com/watch?v=SAIBu6YvErE&list=PL_f2F0Oyaj48Y0Uv4BTlqzK7INi92D2wp&index=2).
