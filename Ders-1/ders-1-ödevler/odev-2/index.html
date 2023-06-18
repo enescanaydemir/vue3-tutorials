@@ -14,19 +14,21 @@
       <div class="card text-center">
         <!-- 1) Butona tıklanıldığında bir alert kutusu çıkartınız -->
         <div class="mb-10">
-          <button>Alert Göster</button>
+          <button @click="showAlert()">Alert Göster</button>
         </div>
         <!-- 2) "keydown" event'ini dinleyerek value değişkeni içerisinde yazdığınız veriyi saklayın. (ipucu: event.target.value size yazdığınız değeri verebilir.) -->
         <div class="mb-10">
-          <input type="text" />
+          <input type="text" @input="value = $event.target.value" />
           <p>{{ value }}</p>
         </div>
         <!-- 3) 2.Uygulamayı düzenleyerek eğer keydown ENTER ise yazdığınız verinin value değerine aktarılmasını sağlayın -->
         <div>
-          <input type="text" />
-          <p>{{ value }}</p>
+          <input type="text" @keydown.enter="valueEnter = $event.target.value" />
+          <p>{{ valueEnter }}</p>
         </div>
       </div>
     </div>
+
+    <script src="app.js"></script>
   </body>
 </html>

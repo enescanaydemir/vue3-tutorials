@@ -1,8 +1,18 @@
 const app = Vue.createApp({
-    data() {
-      return {
-        value: "",
-      };
+  data() {
+    return {
+      value: "",
+      valueEnter: "",
+    };
+  },
+  methods: {
+    showAlert() {
+      alert("Warning");
     },
-  });
-  app.mount("#exercise");
+    updateValue(e){
+      console.log(e.target.value);
+      this.value = e.target.value
+    }
+  },
+});
+app.mount("#exercise");
